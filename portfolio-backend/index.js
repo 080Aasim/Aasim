@@ -12,7 +12,9 @@ const port = process.env.PORT || 4000;
 connectDb();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["https://aasim-five.vercel.app", "http://localhost:4040"]
+}));
 
 app.use("/api/user", userRouter);
 
