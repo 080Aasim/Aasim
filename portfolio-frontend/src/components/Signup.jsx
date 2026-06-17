@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { PortfolioContext } from "../context/Portfolio";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:1308/api/user/sign-up";
+const API = "https://aasim-pdu0.onrender.com/api/user/sign-up";
 function Signup() {
   const { signUp } = useContext(PortfolioContext);
   const navigate = useNavigate();

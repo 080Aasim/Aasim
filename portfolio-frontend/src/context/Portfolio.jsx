@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:1308/api/user";
+const API = "https://aasim-pdu0.onrender.com/api/user";
 
 export const PortfolioContext = createContext(null);
 
