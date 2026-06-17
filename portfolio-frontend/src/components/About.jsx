@@ -7,6 +7,12 @@ import { SiExpress } from "react-icons/si";
 import { DiNodejs } from "react-icons/di";
 import { FaGithub } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
+import { DiRedis } from "react-icons/di";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { SiPostman } from "react-icons/si";
+import { TbBrandCpp } from "react-icons/tb";
+import { FiFramer } from "react-icons/fi";
+
 import "./About.css";
 import { Link } from "react-router-dom";
 function About() {
@@ -32,15 +38,34 @@ function About() {
       <div id="sk">
         <h2>Skills → </h2>
         <p className="skills">
-          Html<MdHtml style={{ marginRight: "4px", fontSize: "40px" }} /> 
-          Css<FaCss3 style={{ marginRight: "4px", fontSize: "40px" }} /> 
-          Tailwind<RiTailwindCssFill style={{ marginRight: "4px", fontSize: "40px" }} />
-          Javascript<IoLogoJavascript style={{ marginRight: "4px", fontSize: "40px" }} />
-          React<FaReact style={{ marginRight: "4px", fontSize: "40px" }} />
-          NodeJs<DiNodejs style={{ marginRight: "4px", fontSize: "40px" }} />
-          ExpressJS<SiExpress style={{ marginRight: "4px", fontSize: "40px" }}/> 
-          MongoDB<BiLogoMongodb style={{ marginRight: "6px", fontSize: "40px" }} />
-          Git/Github<FaGithub style={{ marginRight: "4px", fontSize: "40px" }} />
+          Html
+          <MdHtml style={{ marginRight: "4px", fontSize: "40px" }} />
+          Css
+          <FaCss3 style={{ marginRight: "4px", fontSize: "40px" }} />
+          Tailwind
+          <RiTailwindCssFill style={{ marginRight: "4px", fontSize: "40px" }} />
+          Javascript
+          <IoLogoJavascript style={{ marginRight: "4px", fontSize: "40px" }} />
+          React
+          <FaReact style={{ marginRight: "4px", fontSize: "40px" }} />
+          NodeJs
+          <DiNodejs style={{ marginRight: "4px", fontSize: "40px" }} />
+          ExpressJS
+          <SiExpress style={{ marginRight: "4px", fontSize: "40px" }} />
+          MongoDB
+          <BiLogoMongodb style={{ marginRight: "6px", fontSize: "40px" }} />
+          Git/Github
+          <FaGithub style={{ marginRight: "4px", fontSize: "40px" }} />
+          Redis
+          <DiRedis style={{ marginRight: "4px", fontSize: "40px" }} />
+          Postgresql
+          <BiLogoPostgresql style={{ marginRight: "4px", fontSize: "40px" }} />
+          Postman
+          <SiPostman style={{ marginRight: "4px", fontSize: "40px" }} />
+          Cpp
+          <TbBrandCpp style={{ marginRight: "4px", fontSize: "40px" }} />
+          Framer Motion
+          <FiFramer style={{ marginRight: "4px", fontSize: "40px" }} />
         </p>
       </div>
     </div>
