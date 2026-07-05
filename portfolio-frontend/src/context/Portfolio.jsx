@@ -11,10 +11,10 @@ export const PortfolioProvider = (props) => {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-      setToken(storedToken);
+      // setToken(storedToken);
       fetchUser(storedToken);
     }
-  }, []);
+  }, [token]);
 
   const fetchUser = async (token) => {
     try {
@@ -33,7 +33,7 @@ export const PortfolioProvider = (props) => {
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);
         setToken(res.data.token);
-        setUser(signupData.firstName);
+        setUser(res.data.user.firstName);
         return { success: true };
       } else {
         return { success: false, message: res.data.message };

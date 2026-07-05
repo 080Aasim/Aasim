@@ -17,4 +17,5 @@ app.get("/", (req, res) => {
   res.send("API Working");
 });
 
-export default app;
+// export default app;
+app.listen(port, () => console.log("Server run at" + port))

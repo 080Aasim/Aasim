@@ -1,8 +1,7 @@
 #p {
-  margin-top: 10px;
-  /* border: 1px solid red; */
   height: 100vh;
   width: 100%;
+  z-index: 10;
 }
 
 #pro {
@@ -30,8 +29,6 @@
 
 #projects {
   margin-top: 25px;
-  /* height: fit-content; */
-  /* width: fit-content; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -65,10 +62,7 @@
 
 .project {
   width: 30%;
-  /* margin-top: 30px; */
   height: 180px;
-  /* overflow: hidden; */
-  /* border-bottom: 1px solid black; */
 }
 
 .About h2 {
@@ -82,7 +76,7 @@
 .pLinks {
   text-decoration: none;
   color: black;
-  font-size: 1.2em;
+  font-size: 18px;
   position: relative;
 }
 .pLinks::after {

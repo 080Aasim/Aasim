@@ -36,7 +36,10 @@ const signUp = async (req, res) => {
 
     await newUser.save();
     const token = createToken(newUser._id);
-    return res.json({ success: true, message: "Registered", token });
+    return res.json({ success: true, message: "Registered", token, user: {
+      firstName: newUser.firstName,
+      email: newUser.email
+    } });
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }
@@ -68,7 +71,10 @@ const login = async (req, res) => {
     }
 
     const token = createToken(user._id);
-    res.json({ success: true, message: "Login successfully", token, user });
+    res.json({ success: true, message: "Login successfully", token, user: {
+      firstName: user.firstName,
+      email: user.email
+    } });
   } catch (error) {
     return res.json({ success: false, message: error.message });
   }

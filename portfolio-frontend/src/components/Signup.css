@@ -123,3 +123,12 @@ div.email {
     margin-top: -30px;
   }
 }
+
+.lbtn{
+    font-family: "Times New Roman", Times, serif;
+  border: 1px solid black;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  transition: background-color 0.3s ease-in-out;
+}

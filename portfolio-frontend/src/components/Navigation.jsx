@@ -2,49 +2,39 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 import { PortfolioContext } from "../context/Portfolio";
+import { CanvasTextDemo } from "@/context/CanvasTextDemo";
+
 function Navigation() {
   const { user, token, logout } = useContext(PortfolioContext);
   return (
     <div className="main">
       <div className="left">
-        <NavLink
-          style={({ isActive }) => ({ color: isActive ? "#B3B3B5" : "black" })}
-          className="link"
-          to="/"
-          reloadDocument
-        >
-          Home
+        <NavLink to="/" className="link" reloadDocument>
+          {({ isActive }) =>
+            isActive ? <CanvasTextDemo text="Home" /> : <span>Home</span>
+          }
         </NavLink>
-        <NavLink
-          style={({ isActive }) => ({ color: isActive ? "#B3B3B5" : "black" })}
-          className="link"
-          to="/projects"
-          reloadDocument
-        >
-          Projects
+        <NavLink to="/Projects" className="link" reloadDocument>
+          {({ isActive }) =>
+            isActive ? (
+              <CanvasTextDemo text="Projects" />
+            ) : (
+              <span>Projects</span>
+            )
+          }
         </NavLink>
-        <NavLink
-          style={({ isActive }) => ({ color: isActive ? "#B3B3B5" : "black" })}
-          className="link"
-          to="/About"
-          reloadDocument
-        >
-          About
+        <NavLink to="/About" className="link" reloadDocument>
+          {({ isActive }) =>
+            isActive ? <CanvasTextDemo text="About" /> : <span>About</span>
+          }
         </NavLink>
-
         {token && user ? (
           user
         ) : (
-          <NavLink
-            style={({ isActive }) => ({
-              color: isActive ? "#B3B3B5" : "black",
-            })}
-            className="link"
-            to="/sign-up"
-            reloadDocument
-          >
-            {" "}
-            Signup
+          <NavLink to="/sign-up" className="link" reloadDocument>
+            {({ isActive }) =>
+              isActive ? <CanvasTextDemo text="Signup" /> : <span>Signup</span>
+            }
           </NavLink>
         )}
       </div>
@@ -55,7 +45,9 @@ function Navigation() {
           </NavLink>
         ) : (
           <NavLink className="nlink" to="login">
-            Login
+            {({ isActive }) =>
+              isActive ? <CanvasTextDemo text="Login" /> : <span>Login</span>
+            }
           </NavLink>
         )}
 
