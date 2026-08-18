@@ -4,7 +4,7 @@ import { CanvasText } from "@/components/ui/canvas-text";
 export function CanvasTextDemo({text}) {
   return (
     <div
-      className="flex items-center justify-center bg-white p-8 dark:bg-neutral-950">
+      className="flex items-center justify-center bg-transparent p-0 dark:bg-transparent">
       <CanvasText
         text={text}
         className="text-3xl font-bold md:text-3xl lg:text-3xl"

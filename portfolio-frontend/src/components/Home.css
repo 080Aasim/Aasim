@@ -1,12 +1,10 @@
 .Home {
-  /* border: 1px solid red; */
-  /* height: fit-content; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* padding: 20px 0px; */
   min-height: 100vh;
+  position: relative;
 }
 .main-line {
   color: #b3b3b5;
@@ -15,15 +13,20 @@
 }
 
 .intro {
-  /* border: 1px solid blue; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.7rem;
   text-align: center;
-  margin-top: -48px;
+  margin-top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  min-height: 100vh;
+  isolation: isolate;
+  z-index: 1;
 }
 
 h1 {
@@ -34,29 +37,66 @@ h1 {
 }
 
 .img {
-  background-image: url("../assets/aasim1.png");
-  background-position: top;
-  background-size: cover;
-  /* border: 1px solid red; */
-  width: 30%;
-  height: 380px;
-  /* border-radius: 100%; */
-  /* border-radius:; */
-  /* object-fit: cover; */
-  /* box-shadow: 10px 10px 10px #b3b3b5; */
+  margin-top: 0;
+  background-image: url("../assets/aasim2.png");
+  background-position: center bottom;
+  /* Zoom the transparent PNG itself; the file includes empty space around the subject. */
+  background-size: 64% auto;
+  background-repeat: no-repeat;
+  width: min(58vw, 680px);
+  height: clamp(420px, 72vh, 650px);
+  position: relative;
+  z-index: 2;
 }
 
-@media (max-width: 376px) {
-  div.intro {
-    /* border: 1px solid red; */
-    font-size: 13px;
-    margin-top: -40px;
+.poster-name {
+  color: rgba(0, 0, 0, 0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(5rem, 19vw, 16rem);
+  font-weight: 900;
+  letter-spacing: -0.1em;
+  line-height: 0.78;
+  pointer-events: none;
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .intro {
+    padding: 18px 16px;
+    font-size: 1rem;
   }
 
-  div.img{
-    width: 180px;
-    height: 180px;
+  .img {
+    width: min(100%, 460px);
+    height: clamp(300px, 52svh, 460px);
+    background-size: 82% auto;
   }
 
+  .poster-name {
+    top: 34%;
+    font-size: clamp(4rem, 19vw, 8rem);
+  }
 
+  .text {
+    width: min(100%, 620px);
+  }
+
+  .text p {
+    font-size: clamp(0.9rem, 3.5vw, 1.15rem) !important;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 380px) {
+  .img { height: 280px; }
+  .poster-name { top: 32%; }
 }

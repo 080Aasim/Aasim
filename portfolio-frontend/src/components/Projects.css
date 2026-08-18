@@ -1,136 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 #p {
-  height: 100vh;
-  width: 100%;
-  z-index: 10;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects-section {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 88px 0 72px;
+  position: relative;
+  z-index: 1;
+}
+
+.projects-heading { margin-bottom: 32px; }
+
+.projects-eyebrow {
+  margin: 0 0 8px;
+  color: #6b7280;
+  font-family: "Poppins", "Noto Sans Devanagari", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 #pro {
-  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin: 0;
-  cursor: pointer;
-  position: relative;
-  width: fit-content;
+  color: #111827;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1;
 }
 
-#pro::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 2px;
-  background-color: black;
-  transition: width 0.3s ease-in-out;
-}
-
-#pro:hover::after {
-  width: 100%;
-}
+#pro svg { font-size: 0.65em; }
 
 #projects {
-  margin-top: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
-}
-
-#img1 {
-  background-image: url("../assets/project1.png");
-}
-
-#img2 {
-  background-image: url("../assets/project2.png");
-}
-
-#img3 {
-  background-image: url("../assets/project3.png");
-}
-
-#img4 {
-  background-image: url("../assets/ecommerce.png");
-}
-
-.image {
-  border-top: 1px solid gray;
-  height: 120px;
-  background-position: top;
-  background-size: cover;
-  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .project {
-  width: 30%;
-  height: 180px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(17, 24, 39, 0.08);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  scale: calc(1.02);
+  box-shadow: 0 20px 40px rgba(17, 24, 39, 0.14);
+  cursor: pointer;
+}
+
+.project-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.About {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
 }
 
 .About h2 {
   margin: 0;
-  font-weight: 400;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  margin-top: 5px;
-  border-bottom: 1px solid black;
+  color: #111827;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .pLinks {
+  flex: 0 0 auto;
+  color: #111827;
+  font-size: 0.95rem;
   text-decoration: none;
-  color: black;
-  font-size: 18px;
-  position: relative;
-}
-.pLinks::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 1px;
-  background-color: black;
-  transition: width 0.3s ease-in-out;
 }
 
-.pLinks:hover::after {
-  width: 100%;
+.unavailable {
+  color: #6b7280;
+  cursor: default;
 }
 
-@media (max-width: 376px) {
-  .pro {
-    margin-left: 10px;
-  }
-  .project1 h2 {
-    font-size: 20px;
-  }
-  .project2 h2 {
-    font-size: 20px;
-  }
-  .project3 h2 {
-    font-size: 20px;
-  }
-  .project1 {
-    height: fit-content;
-  }
-  .project2 {
-    height: fit-content;
-  }
-  .project3 {
-    height: fit-content;
-  }
-  .img1 {
-    height: 80px;
-  }
-  .img2 {
-    height: 80px;
-  }
-  .img3 {
-    height: 80px;
-  }
-  .projects {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-block: 10px;
-    margin-top: 35px;
-  }
+@media (max-width: 900px) {
+  #projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .projects-section { width: min(100% - 28px, 520px); padding: 56px 0; }
+  .projects-heading { margin-bottom: 24px; }
+  #projects { grid-template-columns: 1fr; gap: 18px; }
+  .About { padding: 14px; }
+  .About h2 { font-size: 1.1rem; }
 }

@@ -26,7 +26,11 @@ const ScrambledText = ({
 
     split.chars.forEach(el => {
       const c = el;
-      gsap.set(c, { attr: { 'data-content': c.innerHTML } });
+      const { width } = c.getBoundingClientRect();
+      gsap.set(c, {
+        attr: { 'data-content': c.innerHTML },
+        ...(width > 0 ? { width } : {}),
+      });
     });
 
     const handleMove = e => {
@@ -66,7 +70,7 @@ const ScrambledText = ({
       ref={rootRef}
       className={`m-[7vw] max-w-[800px] font-mono text-[clamp(14px,4vw,32px)] text-white ${className}`}
       style={style}>
-      <p>{children}</p>
+      {children}
     </div>
   );
 };

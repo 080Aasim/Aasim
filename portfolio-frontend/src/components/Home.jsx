@@ -31,6 +31,7 @@ function Home() {
       </div>
       <div className="intro z-10 absolute top-43">
         {/* <img src="/src/assets/aasim.png" alt="" className="img" /> */}
+        <div className="poster-name" aria-hidden="true">AASIM</div>
         <div className="img backImg"></div>
         <div className="text">
           <ScrambledText

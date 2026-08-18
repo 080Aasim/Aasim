@@ -1,7 +1,7 @@
 form {
   /* height: 5500px; */
   /* border: 1px solid red; */
-  width: fit-content;
+  width: min(100%, 400px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,21 +66,32 @@ div.LoginSignup {
   align-items: center;
   justify-content: center;
   /* border: 1px solid black; */
-  height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
 }
 
 div.outer {
-  margin-top: -100px;
+  margin-top: 0;
   border: 1px solid black;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 400px;
+  width: min(400px, 100%);
   height: fit-content;
   padding-inline: 40px;
   padding-block: 10px;
+}
+
+div.frm,
+div.log {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
 }
 
 div.username {
@@ -110,18 +121,19 @@ div.email {
   width: 100%;
 }
 
-@media (max-width: 376px) {
+@media (max-width: 640px) {
   div.LoginSignup {
-    /* border: 1px solid red; */
-    width: fit-content;
+    width: 100%;
   }
 
   div.outer {
-    width: 240px;
-    height: 440px;
-    margin-left: 4px;
-    margin-top: -30px;
+    width: 100%;
+    height: auto;
+    padding: 18px;
   }
+
+  div.frm,
+  div.log { padding: 16px; }
 }
 
 .lbtn{

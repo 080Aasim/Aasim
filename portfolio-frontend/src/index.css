@@ -15,6 +15,12 @@
   /* Ensure `html` and `body` fill the viewport */
   html, body {
     height: 100%;
+    overflow-x: hidden;
+    /* border: 1px solid red; Debugging border to visualize the viewport */
+  }
+
+  img, svg, canvas {
+    max-width: 100%;
   }
 
   /* Apply layout settings properly */

@@ -1,119 +1,79 @@
 import { MdHtml } from "react-icons/md";
-import { FaCss3 } from "react-icons/fa";
+import { FaCss3, FaGithub, FaReact } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoMongodb } from "react-icons/bi";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiExpress } from "react-icons/si";
 import { DiNodejs } from "react-icons/di";
-import { FaGithub } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
 import "./About.css";
-import { Link } from "react-router-dom";
 import DotField from "./DotField";
 import Strands from "./Strands";
+import TextPressure from "./TextPressure";
+
+const skills = [
+  { name: "HTML", icon: MdHtml },
+  { name: "CSS", icon: FaCss3 },
+  { name: "Tailwind", icon: RiTailwindCssFill },
+  { name: "JavaScript", icon: IoLogoJavascript },
+  { name: "React", icon: FaReact },
+  { name: "Node.js", icon: DiNodejs },
+  { name: "Express", icon: SiExpress },
+  { name: "MongoDB", icon: BiLogoMongodb },
+  { name: "GitHub", icon: FaGithub },
+];
 
 function About() {
   return (
-    <div className="about">
-      <div
-        style={{
-          width: "100%",
-          height: "100vh",
-          position: "relative",
-          zIndex: 0,
-        }}
-      >
-        <DotField
-          dotRadius={1.5}
-          dotSpacing={14}
-          bulgeStrength={67}
-          glowRadius={160}
-          sparkle={false}
-          waveAmplitude={0}
-          cursorRadius={500}
-          cursorForce={0.1}
-          bulgeOnly
-          gradientFrom="#A855F7"
-          gradientTo="#B497CF"
-          glowColor="#120F17"
-        />
+    <main className="about">
+      <div className="about-background" aria-hidden="true">
+        <DotField dotRadius={1.5} dotSpacing={14} bulgeStrength={67} glowRadius={160} sparkle={false} waveAmplitude={0} cursorRadius={500} cursorForce={0.1} bulgeOnly gradientFrom="#A855F7" gradientTo="#B497CF" glowColor="#120F17" />
       </div>
-      <div className="ab absolute z-10">
-        <div className="me flex gap-4 items-center justify-center">
-          <Link
-            to="https://www.linkedin.com/in/aasim-akhtar-290b861a0/"
-            className="Link"
-            target="_blank"
-          >
-            <h2>Aasim Akhtar</h2>
-          </Link>
-          <Link
-            to="https://www.gniotgroup.edu.in/"
-            className="Link"
-            target="_blank"
-          >
-            <h2>Graduated</h2>
-          </Link>
-          <Link
-            to="https://github.com/080Aasim"
-            className="Link"
-            target="_blank"
-          >
-            <h2>Coding Is Love</h2>
-          </Link>
-        </div>
-        <div id="sk flex">
-          <h2>Skills → </h2>
-          <p className="skills flex items-center justify-center gap-3">
-            Html
-            <MdHtml style={{ marginRight: "4px", fontSize: "40px" }} />
-            Css
-            <FaCss3 style={{ marginRight: "4px", fontSize: "40px" }} />
-            Tailwind
-            <RiTailwindCssFill
-              style={{ marginRight: "4px", fontSize: "40px" }}
-            />
-            Javascript
-            <IoLogoJavascript
-              style={{ marginRight: "4px", fontSize: "40px" }}
-            />
-            React
-            <FaReact style={{ marginRight: "4px", fontSize: "40px" }} />
-            NodeJs
-            <DiNodejs style={{ marginRight: "4px", fontSize: "40px" }} />
-            ExpressJS
-            <SiExpress style={{ marginRight: "4px", fontSize: "40px" }} />
-            MongoDB
-            <BiLogoMongodb style={{ marginRight: "6px", fontSize: "40px" }} />
-            Git/Github
-            <FaGithub style={{ marginRight: "4px", fontSize: "40px" }} />
-          </p>
-        </div>
+      <div className="about-strands" aria-hidden="true">
+        <Strands colors={["#F97316", "#7C3AED", "#06B6D4"]} count={3} speed={0.5} amplitude={1} waviness={1} thickness={0.7} glow={2.6} taper={3} spread={1} intensity={0.6} saturation={2} opacity={1} scale={1.5} glass={false} refraction={1} dispersion={1} glassSize={1} hueShift={0} />
       </div>
 
-      <div style={{ width: "100%", height: "600px", position: "absolute", zIndex: 100, top: 100 }}>
-        <Strands
-          colors={["#F97316", "#7C3AED", "#06B6D4"]}
-          count={3}
-          speed={0.5}
-          amplitude={1}
-          waviness={1}
-          thickness={0.7}
-          glow={2.6}
-          taper={3}
-          spread={1}
-          intensity={0.6}
-          saturation={2}
-          opacity={1}
-          scale={1.5}
-          glass={false}
-          refraction={1}
-          dispersion={1}
-          glassSize={1}
-          hueShift={0}
-        />
-      </div>
-    </div>
+      <section className="about-content" aria-labelledby="about-title">
+        <p className="about-label">मेरे बारे में</p>
+        <div className="about-title-effect" id="about-title">
+          <TextPressure
+            text="I’m Aasim Akhtar."
+            flex
+            alpha={false}
+            stroke={false}
+            width
+            weight
+            italic
+            textColor="#111827"
+            strokeColor="#5227FF"
+            minFontSize={36}
+          />
+        </div>
+        <p className="about-intro">
+          A full-stack developer who enjoys shaping expressive interfaces and reliable systems behind them.
+        </p>
+
+        <div className="about-links mt-5" aria-label="Profile links">
+          <a href="https://www.linkedin.com/in/aasim-akhtar-290b861a0/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
+          <a href="https://www.gniotgroup.edu.in/" target="_blank" rel="noreferrer">Graduate <span>↗</span></a>
+          <a href="https://github.com/080Aasim" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+        </div>
+
+        <div className="skills-section">
+          <div className="skills-heading">
+            <p>Toolkit</p>
+            <h2>Skills I work with</h2>
+          </div>
+          <div className="skills-grid">
+            {skills.map(({ name, icon: Icon }) => (
+              <div className="skill-chip" key={name}>
+                <Icon aria-hidden="true" />
+                <span>{name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 
